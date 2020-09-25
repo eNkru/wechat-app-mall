@@ -18,16 +18,16 @@
       <view>{{freeze}}</view>
       <view>冻结</view>
     </view>
-    <view class='item right' bindtap='goScore'>
+    <!-- <view class='item right' bindtap='goScore'>
       <view>{{score}}</view>
       <view>积分</view>
-    </view>
-    <navigator url="/pages/score/growth">
+    </view> -->
+    <!-- <navigator url="/pages/score/growth">
       <view class='item right'>
         <view>{{growth}}</view>
         <view>成长值</view>
       </view>
-    </navigator>
+    </navigator> -->
   </view>
   <view class="space"></view>
   <navigator url="/pages/order-list/index">
@@ -59,23 +59,23 @@
       <image class="icon" src="/images/order/pj.png" background-size="cover"></image>
       <view class='text'>待评价</view>
     </view>
-    <view class='item' bindtap='goOrder' data-type="99">
+    <!-- <view class='item' bindtap='goOrder' data-type="99">
       <image class="icon" src="/images/order/shouhou.png" background-size="cover"></image>
       <view class='text'>售后</view>
-    </view>
+    </view> -->
   </view>
   <view wx:if="{{canHX}}" class="line"></view>
   <view wx:if="{{canHX}}" class="menu-item" bindtap="scanOrderCode">
     <view class="l">扫码核销</view>
     <image class="next" src="/images/icon/next.png"></image>
   </view>
-  <view class="line"></view>
+  <!-- <view class="line"></view>
   <navigator url="/pages/maidan/index">
     <view class="menu-item">
       <view class="l">优惠买单</view>
       <image class="next" src="/images/icon/next.png"></image>
     </view>
-  </navigator>
+  </navigator> -->
   <view class="line"></view>
   <navigator url="/pages/asset/index">
     <view class="menu-item">
@@ -101,7 +101,7 @@
     <view class="r">内容</view>
   </view> -->
 
-  <view class="space"></view>
+  <!-- <view class="space"></view>
   <navigator wx:if="{{!apiUserInfoMap.base.isSeller}}" url="/pages/fx/apply-status">
     <view class="menu-item">
       <view class="l">成为分销商</view>
@@ -113,8 +113,8 @@
       <view class="l">分销中心</view>
       <image class="next" src="/images/icon/next.png"></image>
     </view>
-  </navigator>
-  <view wx:if="{{apiUserInfoMap.base.isSeller}}" class="line"></view>
+  </navigator> -->
+  <!-- <view wx:if="{{apiUserInfoMap.base.isSeller}}" class="line"></view>
   <navigator wx:if="{{apiUserInfoMap.base.isSeller}}" url="/pages/fx/members">
     <view class="menu-item">
       <view class="l">销售团队</view>
@@ -127,9 +127,9 @@
       <view class="l">佣金明细</view>
       <image class="next" src="/images/icon/next.png"></image>
     </view>
-  </navigator>
+  </navigator> -->
 
-  <view class="space"></view>
+  <!-- <view class="space"></view>
   <navigator url="/pages/invoice/apply">
     <view class="menu-item">
       <view class="l">申请发票</view>
@@ -142,7 +142,7 @@
       <view class="l">发票记录</view>
       <image class="next" src="/images/icon/next.png"></image>
     </view>
-  </navigator>
+  </navigator> -->
 
   <view class="space"></view>
   <navigator url="/pages/select-address/index">
@@ -151,13 +151,13 @@
       <image class="next" src="/images/icon/next.png"></image>
     </view>
   </navigator>
-  <view class="line"></view>
+  <!-- <view class="line"></view>
   <navigator url="/pages/coupons/index">
     <view class="menu-item">
       <view class="l">领券中心</view>
       <image class="next" src="/images/icon/next.png"></image>
     </view>
-  </navigator>
+  </navigator> -->
   <view class="line"></view>
   <navigator url="/pages/goods/fav">
     <view class="menu-item">
@@ -166,7 +166,7 @@
     </view>
   </navigator>
 
-  <view class="space"></view>
+  <!-- <view class="space"></view>
   <navigator url="/pages/sign/index">
     <view class="menu-item">
       <view class="l">每日签到</view>
@@ -187,14 +187,14 @@
       <image class="next" src="/images/icon/next.png"></image>
     </view>
   </navigator>
-  <view class="line"></view>
+  <view class="line"></view> -->
 
   <view class="space"></view>
   <view class="menu-item" bindtap="aboutUs">
     <view class="l">关于我们</view>
     <image class="next" src="/images/icon/next.png"></image>
   </view>
-  <view class="line"></view>
+  <!-- <view class="line"></view>
   <navigator url="/pages/help/index">
     <view class="menu-item">
       <view class="l">帮助中心</view>
@@ -205,11 +205,11 @@
   <view wx:if="{{userMobile}}" class="menu-item">
     <view class="l">绑定手机</view>
     <view class="r">{{ userMobile }}</view>
-  </view>
-  <view  wx:else class="menu-item">
+  </view> -->
+  <!-- <view  wx:else class="menu-item">
     <view class="l">绑定手机</view>
     <button type="primary" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即绑定</button>
-  </view>
+  </view> -->
   <view class="line"></view>
   <view class="menu-item" bindtap="clearStorage">
     <view class="l">清除缓存</view>
@@ -234,7 +234,7 @@
   
 
   <view class="space"></view>
-  <view class="version">EastWorld v {{version}}</view>
+  <view class="version">MuMu Studio v {{version}}</view>
   <view class="space"></view>
 </view>
 

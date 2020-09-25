@@ -42,8 +42,8 @@ swiper-item image {
   width: 130rpx;
 }
 .goods-info-fx .item {
-  width: 50rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
   right: 130rpx;
   top: 100rpx;
   display: flex;
@@ -55,8 +55,8 @@ swiper-item image {
   z-index: 20;
 } 
 .goods-info-fx .item image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .goods-info-fx .item button {
   position: absolute;
@@ -167,8 +167,8 @@ swiper-item image {
   z-index: 99;
 }
 .footer-box .contact image {
-  width: 60rpx;
-  height: 60rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .footer-box .shop-cart-btn {
   position: relative;
@@ -179,28 +179,28 @@ swiper-item image {
   margin-left: 32rpx;
 }
 .footer-box .shop-cart-btn image {
-  width: 55rpx;
-  height: 55rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .fav-icon {
-  width: 60rpx;
-  height: 60rpx;
+  width: 40rpx;
+  height: 40rpx;
   margin-left: 32rpx;
   /*707070*/
 }
 .footer-box .shop-cart-btn .shop-num{
   position: absolute;
   color:#fff;
-  left: 32rpx;
-  top:10rpx;
+  left: 18rpx;
+  top: 24rpx;
 
-  width: 40rpx;
-  height: 40rpx;
-  line-height: 40rpx;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
   text-align: center;
   border-radius: 50%;
   background: #e64340;
-  font-size: 24rpx;
+  font-size: 16rpx;
 }
 .footer-box .join-shop-cart{
   text-align: center;
