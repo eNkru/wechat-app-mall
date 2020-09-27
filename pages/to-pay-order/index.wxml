@@ -76,9 +76,14 @@
   <van-cell wx:if="{{balance}}" title="账户余额" value="{{balance}}" />
 </van-cell-group>
 <view class="bottom-box"></view>
-<van-submit-bar
+<!-- <van-submit-bar
   price="{{ allGoodsAndYunPrice*100 - youhuijine*100 }}"
   suffix-label="+{{totalScoreToPay}} 积分"
+  button-text="提交订单"
+  bind:submit="goCreateOrder"
+/> -->
+<van-submit-bar
+  price="{{ allGoodsAndYunPrice*100 - youhuijine*100 }}"
   button-text="提交订单"
   bind:submit="goCreateOrder"
 />
