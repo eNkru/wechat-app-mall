@@ -111,20 +111,20 @@ Page({
     })  
   },
   async bindSave(e) {
-    if (this.data.pIndex == 0 ) {
-      wx.showToast({
-        title: '请选择省份',
-        icon: 'none'
-      })
-      return
-    }
-    if (this.data.cIndex == 0 ) {
-      wx.showToast({
-        title: '请选择城市',
-        icon: 'none'
-      })
-      return
-    }
+    // if (this.data.pIndex == 0 ) {
+    //   wx.showToast({
+    //     title: '请选择省份',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
+    // if (this.data.cIndex == 0 ) {
+    //   wx.showToast({
+    //     title: '请选择城市',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     const linkMan = e.detail.value.linkMan;
     const address = e.detail.value.address;
     const mobile = e.detail.value.mobile;
@@ -158,12 +158,13 @@ Page({
       code: code,
       isDefault: 'true',
     }
-    if (this.data.pIndex > 0) {
-      postData.provinceId = this.data.provinces[this.data.pIndex].id
-    }
-    if (this.data.cIndex > 0) {
-      postData.cityId = this.data.cities[this.data.cIndex].id
-    }
+
+    // provice provided using its id, otherwise use the first as default.
+    postData.provinceId = this.data.pIndex ? this.data.provinces[this.data.pIndex].id : '110000000000'
+
+    // city provided using its id, otherwise use the first as default.
+    postData.cityId = this.data.cIndex ? this.data.cities[this.data.cIndex].id : '0'
+
     if (this.data.aIndex > 0) {
       postData.districtId = this.data.areas[this.data.aIndex].id
     }    

@@ -257,14 +257,16 @@ Page({
       } else {
         // 余额不够
         wx.showModal({
-          title: '请确认支付',
+          title: '请转账支付',
           content: `您当前可用余额﹩${balance}，仍需支付﹩${money}`,
-          confirmText: "确认支付",
+          confirmText: "现在支付",
           cancelText: "暂不付款",
           success: res2 => {
             if (res2.confirm) {
               // 使用余额支付
-              wxpay.wxpay('order', money, res.data.id, "/pages/order-list/index");
+              // wxpay.wxpay('order', money, res.data.id, "/pages/order-list/index");
+              // prompt the payment info
+              this.openBankDetailsModal(money)
             } else {
               wx.redirectTo({
                 url: "/pages/order-list/index"
@@ -275,7 +277,9 @@ Page({
       }
     } else {
       // 没余额
-      wxpay.wxpay('order', res.data.amountReal, res.data.id, "/pages/order-list/index");
+      // wxpay.wxpay('order', res.data.amountReal, res.data.id, "/pages/order-list/index");
+      // prompt the payment info
+      this.openBankDetailsModal(res.data.amountReal)
     }
   },
   async initShippingAddress() {
@@ -421,4 +425,25 @@ Page({
       phoneNumber: shop.linkPhone,
     })
   },
+  openBankDetailsModal(payAmount) {
+    const bankAccount = wx.getStorageSync('bankAccount')
+    wx.showModal({
+      title: '转账账号',
+      content: `请转﹩${payAmount}到如下账号\r\n银行：${wx.getStorageSync('bankName')}\r\n账号：${bankAccount}`,
+      confirmText: '复制账号',
+      showCancel: false,
+      success: copyRes => {
+        if (copyRes.confirm) {
+          wx.setClipboardData({
+            data: bankAccount,
+            success: copiedRes => {
+              wx.redirectTo({
+                url: "/pages/order-list/index"
+              })
+            }
+          })
+        }
+      }
+    })
+  }
 })

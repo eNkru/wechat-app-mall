@@ -2,15 +2,15 @@
   <view class="page__bd">
     <form bindsubmit="bindSave">
     <view class="weui-cells weui-cells_after-title">      
-      <view wx:if="{{!id && provinces}}" class="weui-cell weui-cell_select" bindtap="readFromWx">
+      <!-- <view wx:if="{{!id && provinces}}" class="weui-cell weui-cell_select" bindtap="readFromWx">
         <view class="weui-cell__bd">
           <view class="weui-select weui-select_in-select-after read-wx">
             获取微信收货地址
           </view>
         </view>
       </view>
-      <view class="space"></view>
-      <view class="weui-cell weui-cell_select">
+      <view class="space"></view> -->
+      <!-- <view class="weui-cell weui-cell_select">
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
           <view class="weui-label">省份</view>
         </view>
@@ -39,8 +39,8 @@
             <view class="weui-select weui-select_in-select-after">{{areas[aIndex].name}}</view>
           </picker>
         </view>
-      </view>
-      <view wx:if="{{streets}}" class="weui-cell weui-cell_select">
+      </view> -->
+      <!-- <view wx:if="{{streets}}" class="weui-cell weui-cell_select">
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
           <view class="weui-label">街道/镇</view>
         </view>
@@ -49,8 +49,8 @@
             <view class="weui-select weui-select_in-select-after">{{streets[sIndex].name}}</view>
           </picker>
         </view>
-      </view>
-      <view wx:if="{{communities}}" class="weui-cell weui-cell_select">
+      </view> -->
+      <!-- <view wx:if="{{communities}}" class="weui-cell weui-cell_select">
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
           <view class="weui-label">社区/村委会</view>
         </view>
@@ -59,10 +59,10 @@
             <view class="weui-select weui-select_in-select-after">{{communities[ccIndex].name}}</view>
           </picker>
         </view>
-      </view>
+      </view> -->
       <view class="weui-cell">
         <view class="weui-cell__hd">
-          <view class="weui-label">姓名</view>
+          <view class="weui-label">联系人</view>
         </view>
         <view class="weui-cell__bd">
           <input name="linkMan" class="weui-input" type="text" placeholder="填写收货人" value="{{addressData.linkMan}}" />
