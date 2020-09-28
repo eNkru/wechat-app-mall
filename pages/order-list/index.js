@@ -187,6 +187,8 @@ Page({
     })
   },
   onShow: function() {
+    wx.showToast({title: '加载中', icon: 'loading', duration: 5000, mask: true})
+    
     AUTH.checkHasLogined().then(isLogined => {
       if (isLogined) {
         this.doneShow();
@@ -239,6 +241,8 @@ Page({
           goodsMap: {}
         });
       }
+
+      wx.hideToast()
     })
   },
   onHide: function() {

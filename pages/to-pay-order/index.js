@@ -31,6 +31,8 @@ Page({
     if (this.data.pageIsEnd) {
       return
     }
+    wx.showToast({title: '加载中', icon: 'loading', duration: 5000, mask: true})
+
     AUTH.checkHasLogined().then(isLogined => {
       this.setData({
         wxlogin: isLogined
@@ -61,8 +63,8 @@ Page({
       goodsList,
       peisongType: this.data.peisongType
     });
-    this.initShippingAddress()
-    this.userAmount()
+    await this.initShippingAddress()
+    await this.userAmount()
   },
 
   onLoad(e) {
@@ -84,6 +86,8 @@ Page({
         balance: res.data.balance
       })
     }
+
+    wx.hideToast()
   },
   getDistrictId: function (obj, aaa) {
     if (!obj) {

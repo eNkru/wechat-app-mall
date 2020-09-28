@@ -67,6 +67,7 @@ Page({
     }
   },
   onShow (){
+    wx.showToast({title: '加载中', icon: 'loading', duration: 5000, mask: true})
     AUTH.checkHasLogined().then(isLogined => {
       if (isLogined) {
         this.setData({
@@ -166,6 +167,8 @@ Page({
       }
       that.setData(_data);
     }
+
+    wx.hideToast()
   },
   async shopSubdetail(shopId){
     const res = await WXAPI.shopSubdetail(shopId)

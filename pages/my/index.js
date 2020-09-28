@@ -20,10 +20,14 @@ Page({
     count_id_no_pay: 0,
     count_id_no_reputation: 0,
     count_id_no_transfer: 0,
+
+    // loading progress
+    userDetailsLoaded: false,
+    userAmountLoaded: false,
+    userStatsLoaded: false,
   },
-	onLoad() {
-	},
   onShow() {
+    wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true})
     const _this = this
     const order_hx_uids = wx.getStorageSync('order_hx_uids')
     this.setData({
@@ -106,6 +110,9 @@ Page({
         }
         that.setData(_data);
       }
+
+      that.setData({userDetailsLoaded: true})
+      that.data.userAmountLoaded && that.data.userStatsLoaded && wx.hideToast()
     })
   },
   getUserAmount: function () {
@@ -119,6 +126,9 @@ Page({
           growth: res.data.growth
         });
       }
+
+      that.setData({userAmountLoaded: true})
+      that.data.userDetailsLoaded && that.data.userStatsLoaded && wx.hideToast()
     })
   },
   handleOrderCount: function (count) {
@@ -140,6 +150,9 @@ Page({
           count_id_no_transfer: this.handleOrderCount(count_id_no_transfer),
         })
       }
+
+      this.setData({userStatsLoaded: true})
+      that.data.userAmountLoaded && that.data.userDetailsLoaded && wx.hideToast()
     })
   },
   goAsset: function () {

@@ -40,6 +40,7 @@ Page({
     this.onShow();
   },
   onShow: function() {
+    wx.showToast({title: '加载中', icon: 'loading', duration: 5000, mask: true})
     AUTH.checkHasLogined().then(isLogined => {
       this.setData({
         wxlogin: isLogined
@@ -64,6 +65,7 @@ Page({
         shippingCarInfo: null
       })
     }
+    wx.hideToast()
   },
   toIndexPage: function() {
     wx.switchTab({
