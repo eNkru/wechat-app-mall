@@ -133,7 +133,26 @@ Page({
         _this.onShow();
       })
     } else {
-      wxpay.wxpay('order', money, orderId, "/pages/order-list/index");
+      // wxpay.wxpay('order', money, orderId, "/pages/order-list/index");
+      const bankAccount = wx.getStorageSync('bankAccount')
+      wx.showModal({
+        title: '转账账号',
+        content: `请转﹩${money}到如下账号\r\n银行：${wx.getStorageSync('bankName')}\r\n账号：${bankAccount}`,
+        confirmText: '复制账号',
+        showCancel: false,
+        success: copyRes => {
+          if (copyRes.confirm) {
+            wx.setClipboardData({
+              data: bankAccount,
+              success: copiedRes => {
+                wx.redirectTo({
+                  url: "/pages/order-list/index"
+                })
+              }
+            })
+          }
+        }
+      })
     }
   },
   onLoad: function(options) {
